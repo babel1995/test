@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>form表单案例</title>
+</head>
+<body>
+<form action="" method="post"><!--action为提交地址，method默认get方式-->
+	<h3>请选中你喜欢的运动项目<h3/>
+	<input type="checkbox" name="sports" />篮球<br/><!--复选框checkbox-->
+	<input type="checkbox" name="sports" />足球<br/>
+	<input type="checkbox" name="sports" />手球<br/>
+    <h3>请选中你喜欢的书<h3/>
+	<input type="checkbox" name="books" />武侠<br/>
+	<input type="checkbox" name="books" />言情<br/>
+	<input type="checkbox" name="books" />探险<br/>
+	<h3>请选中你的性别<h3/>
+	<input type="radio" name="sex" />男<br/>
+	<!--单选框radio，name保持一致-->
+	<input type="radio" name="sex" />女<br/>
+	<h3>图片<h3/>
+	<input type="image" src=""/><!--图片按钮，src为图片链接-->
+	<h3>下拉列表<h3/>
+	请选中你喜欢的城市：
+	<select name="city"><!--下拉框用select-->
+		<option value="">--请选择--</option><!--选项用option-->
+		<option value="beijing">北京</option>
+		<option value="shanghai">上海</option>
+	</select>
+	<h3>文本域</h3>
+	<textarea cols="30" rows="10">提示文本</textarea>
+	<!--cols列数，rows行数-->
+	<h3>文件控件</h3>
+	请选中你喜欢的文件<input type="file" name="myfile"/>
+	<button type="submit" value="">提交</button>
+	<!--提交表单数据，button按钮文字写在标签之间，input写在value值内-->
+	<input type="submit" value="提交" />
+</form>
+</body>
+</html>

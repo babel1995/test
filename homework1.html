@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>课程表</title>
+</head>
+
+<body>
+    <p align="center">课程表</p>
+    <table border="1" align="center">
+        <tr align="center">
+            <th colspan="1">项目</th>
+            <th colspan="5">上课</th>
+            <th colspan="2">休息</th>
+        </tr>
+        <tr>
+            <td>星期</td>
+            <td>星期一</td>
+            <td>星期二</td>
+            <td>星期三</td>
+            <td>星期四</td>
+            <td>星期五</td>
+            <td>星期六</td>
+            <td>星期天</td>
+        </tr>
+        <tr>
+            <td rowspan="4">上午</td>
+            <td>语文</td>
+            <td>数学</td>
+            <td>英语</td>
+            <td>英语</td>
+            <td>物理</td>
+            <td>计算机</td>
+            <td rowspan="4">休息</td>
+        </tr>
+        <tr>
+            <td>数学</td>
+            <td>数学</td>
+            <td>地理</td>
+            <td>历史</td>
+            <td>化学</td>
+            <td>计算机</td>
+        </tr>
+        <tr>
+            <td>化学</td>
+            <td>语文</td>
+            <td>体育</td>
+            <td>计算机</td>
+            <td>英语</td>
+            <td>计算机</td>
+        </tr>
+        <tr>
+            <td>政治</td>
+            <td>英语</td>
+            <td>体育</td>
+            <td>历史</td>
+            <td>地理</td>
+            <td>计算机</td>
+        </tr>
+        <tr>
+            <td rowspan="2">下午</td>
+            <td>语文</td>
+            <td>数学</td>
+            <td>英语</td>
+            <td>英语</td>
+            <td>物理</td>
+            <td>计算机</td>
+            <td rowspan="2">休息</td>
+        </tr>
+        <tr>
+            <td>数学</td>
+            <td>数学</td>
+            <td>地理</td>
+            <td>历史</td>
+            <td>化学</td>
+            <td>计算机</td>
+        </tr>
+    </table>
+    <!--问题：题目不紧凑，表格文字不居中，字体没加粗，上午下午间隔不够大-->
+    <!--解决：题目为浏览器默认效果差别，在tr里加上align="center"居中行内文字，粗体效果用表头<th>表示,间隔为浏览器分辨率问题-->
+</body>
+
+</html>
