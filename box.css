@@ -1,0 +1,56 @@
+.div1{
+	background: #F5F5F5;
+	width:350px;
+	border: 1px #ccc solid;
+	margin: 0 auto;
+}
+.div2{
+	margin-top: 5px;
+	width: 350px;
+	padding: 0;
+	/*background: pink;*/
+	overflow: hidden;
+}
+.div2 span{
+	display: block;
+	/*background: yellow;*/
+	width: 350px;
+	text-indent: 5px;
+	margin-top: 10px;/*上边距设置失败*/
+}
+.ulface1{
+	display: block;
+	width: 350px;
+	height: 145px;
+	padding: 0;
+	margin: 0;
+	/*background: blue;*/
+}
+
+.div2 span a{
+    font-size: 5px;
+    color: blue;
+    float: right;
+    margin-top: 2px;
+    margin-right: 5px;
+	text-decoration: none;/*取消下划线*/
+
+
+}
+
+.ulface1 li{
+	list-style-type: none;
+	float: left;
+	margin-left: 25px;
+	text-align: center;
+	margin-top: 15px;
+}
+.ulface1 li img {
+width:80px;
+height: 80px;
+}
+.ulface1 li a{
+	margin-top: 2px;
+	color: black;
+	text-decoration: none;
+}
