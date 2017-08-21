@@ -4,38 +4,37 @@
 	<meta charset="UTF-8">
 	<title>discuz</title>
 	<link rel="stylesheet" type="text/css" href="jsdemo1.css"/>
-	
 </head>
-<body>
+<body class="red">
 <!-- 第一层 -->
 	<div  class="down" id="div1">
-		<div class="topa">
+		<div class="topa" onclick="checkClass()" id="btn">
 			<a href="">miaov.com</a>
 		</div>
 		<div >
 		<!-- 鼠标经过和离开事件，调用js函数，实现第二层的出现和隐藏 -->
-			<div class="pic" onmouseover="appear()" onmouseout="disappear()"/>
-				<img src="Desktop/huangouzi/image/jsDemo1.png"  / >
+			<div class="pic"  />
+				<img src="../image/jsDemo1.png" onmouseover="appear()" / >
 			</div>
-			<ul>
+			<ul class="info">
 				<li>miaov.com</li>
-				<li><img src=""></li>
-				<li><span>积分</span></li>
-				<li><span>UID</span></li>
-				<li><span>帖子</span></li>
-				<li><span>威望</span></li>
+				<li><img src="../image/jsDemo1.2.png"></li>
+				<li><span class="val-name">积分</span><span>3850</span></li>
+				<li><span class="val-name">UID</span><span>3850</span></li>
+				<li><span class="val-name">帖子</span><span>3850</span></li>
+				<li><span class="val-name">威望</span><span>3850</span></li>
 			</ul>
 		</div>
 	</div>
 <!-- 第二层 -->
-	<div id="div2" class="up">
-		<div><img src="image/shilanlan.jpg"/></div>
+	<div id="div2" class="up" onmouseleave="disappear()">
+		<img src="../image/jsDemo1.png"/>
 		<div>
 			<span>leo当前在线</span>
 		</div>
 		<div>
 			<ul>
-			<li>积分</li>
+			<li><a href="#">积分</a></li>
 			</ul>
 		</div>
 	</div>
@@ -49,6 +48,12 @@
 		}
 		function disappear(){
 			div2.style.display="none";
+		}
+		function checkClass(){
+			document.getElementById('btn').className = "addclass";
+		}
+		document.onclick = function () {
+			document.body.className = 'green';
 		}
 	</script>
 

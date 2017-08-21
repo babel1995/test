@@ -2,39 +2,81 @@
 	margin-left: 50px;
 	margin-top: 30px;
 	width: 200px;
-	height: 500px;
-	background-color: #87CEFA;
+	/*height: 500px;*/
+	background-color: #eee;
 
 }
 .topa{
-	padding: o;
+	padding: 0;
 	margin-top: 5px;
-	margin-left: 5px;
-	background-color: #C0C0C0;
+	background-color: #eee;
+	border-bottom: 1px solid #aaa;
+	padding-left: 20px;
+	line-height: 36px;
+	background: url(https://avatars1.githubusercontent.com/u/13638996?v=4&s=100) left 0 no-repeat;
+	background-size: 36px 36px;
+}
+.addclass {
+	padding: 0;
+	margin-top: 5px;
+	background-color: #eee;
+	border-bottom: 1px solid #aaa;
+	padding-left: 20px;
+	line-height: 36px;
+	background: url(https://avatars1.githubusercontent.com/u/13638996?v=4&s=100) right 0 no-repeat;
+	background-size: 36px 36px;
+}
+a {
+	text-decoration: none;
 }
 .pic{
-	width: 200px;
-	height: 250px;
-	background-color: #000000;
+	width: 160px;
+	/*height: 250px;*/
+	background-color: #eee;
+	padding: 20px;
 }
 .pic img{
-	width: 200px;
-	height: 250px;
-	background-color: #000000;
-	
+	width: 160px;
+	height: 210px;
 }
 .down ul{
+	margin: 0;
 	list-style-type: none;
-	background-color: #505050;
+	background-color: #eee;
+	padding-bottom: 30px;
 }
+.info li {
+	height: 30px;
+	line-height: 30px;
+	font-size: 12px;
+	color:#333;
+}
+.info li .val-name {
+	display: inline-block;
+	width: 4em;
+	padding-right: 1em;
+}
+
 .up{
 	position: absolute;
 	left: 58px;
-	top: 52px;
-	padding: 0;
-	width: 500px;
-	height: 200px;
-	background-color: #9999FF;
+	top: 67px;
+	padding: 20px;
+	width: 460px;
+	height: 250px;
+	background-color: rgba(123,123,123,0.3);
 	display: none;
-	pointer-events: none;/*防止鼠标事件受到影响产生层的闪烁*/
+	overflow: hidden;
+	/*pointer-events: none;/*防止鼠标事件受到影响产生层的闪烁*/
 }
+.up img{float: left; 	width: 160px;
+	height: 210px;
+	background-color: #000000;}
+
+
+	.red{
+		background: red;
+	}
+	.green {
+		background: yellow;
+	}
