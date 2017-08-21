@@ -1,0 +1,40 @@
+.down{
+	margin-left: 50px;
+	margin-top: 30px;
+	width: 200px;
+	height: 500px;
+	background-color: #87CEFA;
+
+}
+.topa{
+	padding: o;
+	margin-top: 5px;
+	margin-left: 5px;
+	background-color: #C0C0C0;
+}
+.pic{
+	width: 200px;
+	height: 250px;
+	background-color: #000000;
+}
+.pic img{
+	width: 200px;
+	height: 250px;
+	background-color: #000000;
+	
+}
+.down ul{
+	list-style-type: none;
+	background-color: #505050;
+}
+.up{
+	position: absolute;
+	left: 58px;
+	top: 52px;
+	padding: 0;
+	width: 500px;
+	height: 200px;
+	background-color: #9999FF;
+	display: none;
+	pointer-events: none;/*防止鼠标事件受到影响产生层的闪烁*/
+}

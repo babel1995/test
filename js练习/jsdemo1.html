@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>discuz</title>
+	<link rel="stylesheet" type="text/css" href="jsdemo1.css"/>
+	
+</head>
+<body>
+<!-- 第一层 -->
+	<div  class="down" id="div1">
+		<div class="topa">
+			<a href="">miaov.com</a>
+		</div>
+		<div >
+		<!-- 鼠标经过和离开事件，调用js函数，实现第二层的出现和隐藏 -->
+			<div class="pic" onmouseover="appear()" onmouseout="disappear()"/>
+				<img src="Desktop/huangouzi/image/jsDemo1.png"  / >
+			</div>
+			<ul>
+				<li>miaov.com</li>
+				<li><img src=""></li>
+				<li><span>积分</span></li>
+				<li><span>UID</span></li>
+				<li><span>帖子</span></li>
+				<li><span>威望</span></li>
+			</ul>
+		</div>
+	</div>
+<!-- 第二层 -->
+	<div id="div2" class="up">
+		<div><img src="image/shilanlan.jpg"/></div>
+		<div>
+			<span>leo当前在线</span>
+		</div>
+		<div>
+			<ul>
+			<li>积分</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
+
+	<script type="text/javascript">
+	var div2=document.getElementById('div2');
+		function appear(){
+			div2.style.display="block";
+		}
+		function disappear(){
+			div2.style.display="none";
+		}
+	</script>
+
+
+
+
+
