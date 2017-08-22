@@ -1,0 +1,43 @@
+.all{
+	width: 200px;
+	margin-top: 50px;
+	margin-left: 150px;
+	line-height: 30px;
+	border: 1px solid #666;
+
+
+}
+.playlist{
+	padding-left: 8px;
+	font-size: 15px;
+	background-color: #ccc;
+}
+.playlist img{
+	
+}
+.list{
+	font-size: 12px;
+	background-color: #eee;
+	display: none;
+}
+.nolist ul{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	margin-left: 8px;
+}
+.nolist{
+	font-size: 12px;
+	background-color: #eee;
+	display: none;
+}
+.list{
+	font-size: 12px;
+	background-color: #eee;
+	display: block;
+}
+.list ul{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	margin-left: 8px;

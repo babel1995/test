@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js案例：鼠标点击显示隐藏信息</title>
+	<link rel="stylesheet" type="text/css" href="jsdemo1-2.css">
+</head>
+<body>
+	<div class="all">
+		<div class="playlist" onclick="aplist()">
+			<span>播放列表</span>
+			<img src="">
+		</div>
+		<div class="nolist" id="list" >
+			<ul>
+				<li><a href="">玩爱之徒 — 蔡依林</a></li>
+				<li><a href="">原谅我就是这样的女生 - 戴佩妮</a></li>
+				<li><a>猜不透 - 丁当</a></li>
+				<li><a>自导自演 - 周杰伦</a></li>
+				<li><a>浪漫窝 - 弦子</a></li>
+				<li><a>流年 - 王菲</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
+	<script type="text/javascript">
+		function aplist(){
+			// document.getElementById('list').style.display="block";
+			document.getElementById('list').className='list';
+		}
+
+	</script>
+<!--问题：点击收起下拉列表，同一个点击两个不同的效果出现：下拉列表和图片在点击的时候同时变化。-->
+
+
+
+
