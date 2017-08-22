@@ -1,0 +1,28 @@
+div{
+	width: 50px;
+	height: 30px;
+	background-color: #999999;
+	margin-top:5px;
+	margin-left: 5px;
+	float: left;
+}
+#div1{
+	/*position: relative;*/
+	/*left: 50px;*/
+	/*top: 35px;*/
+	width: 100px;
+	height: 100px;
+	background-color: #ccc;
+}
+#div3{
+	position: relative;
+	left: 30px;
+	top: 35px;
+}
+#div2{
+	position: absolute;
+	left: 55px;
+	top: 35px;
+	background-color: #222;
+	
+}
