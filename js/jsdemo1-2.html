@@ -25,13 +25,20 @@
 </body>
 </html>
 	<script type="text/javascript">
+		var count=1;
 		function aplist(){
 			// document.getElementById('list').style.display="block";
-			document.getElementById('list').className='list';
+			if (count%2){
+				document.getElementById('list').className='list';
+			}else{
+				document.getElementById('list').className='nolist'
+			}
+			count++;
 		}
 
 	</script>
-<!--问题：点击收起下拉列表，同一个点击两个不同的效果出现：下拉列表和图片在点击的时候同时变化。-->
+<!--用余数（除2取余）来判断点击次数的奇偶性，注意第一次调用的函数计数变量值为开始赋予的值，函数末尾计数变量加一，作为下一次调用函数的计数值。-->
+<!--问题：同一个点击两个不同的效果出现：下拉列表和图片在点击的时候同时变化。-->
 
 
 
