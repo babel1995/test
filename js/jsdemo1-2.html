@@ -9,7 +9,8 @@
 	<div class="all">
 		<div class="playlist" onclick="aplist()">
 			<span>播放列表</span>
-			<img src="">
+			<img src="../image/arrow-up.jpeg">
+			<img src="../image/arrow-down.jpeg">
 		</div>
 		<div class="nolist" id="list" >
 			<ul>
@@ -30,8 +31,12 @@
 			// document.getElementById('list').style.display="block";
 			if (count%2){
 				document.getElementById('list').className='list';
+				document.getElementsByTagName('img')[0].style.display = 'none';
+				document.getElementsByTagName('img')[1].style.display = 'inline';
 			}else{
-				document.getElementById('list').className='nolist'
+				document.getElementById('list').className='nolist';
+				document.getElementsByTagName('img')[1].style.display = 'none';
+				document.getElementsByTagName('img')[0].style.display = 'inline';
 			}
 			count++;
 		}

@@ -11,9 +11,14 @@
 	padding-left: 8px;
 	font-size: 15px;
 	background-color: #ccc;
+	height: 30px;
 }
 .playlist img{
-	
+	height: 100%;
+	float: right;
+}
+.playlist img:nth-of-type(2) {
+	display: none;
 }
 .list{
 	font-size: 12px;
