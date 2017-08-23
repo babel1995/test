@@ -19,8 +19,9 @@
 }
 .playlist img:nth-of-type(2) {
 	display: none;
+
 }
-.list{
+.nolist{
 	font-size: 12px;
 	background-color: #eee;
 	display: none;
@@ -31,11 +32,7 @@
 	margin: 0;
 	margin-left: 8px;
 }
-.nolist{
-	font-size: 12px;
-	background-color: #eee;
-	display: none;
-}
+
 .list{
 	font-size: 12px;
 	background-color: #eee;

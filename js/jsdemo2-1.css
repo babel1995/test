@@ -1,0 +1,11 @@
+.d1{
+	width: 100px;
+	height: 30px;
+	border: 1px solid #aaa;
+}
+.d2{
+	width: 100px;
+	height: 100px;
+	border: 1px solid #aaa;
+	display: none;
+}

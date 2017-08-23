@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js全选练习</title>
+</head>
+<body>
+	<input type="checkbox"/ id="input1">全选<br/>
+	<input type="checkbox"/><br/>
+	<input type="checkbox"/><br/>
+	<input type="checkbox"/><br/>
+	<input type="checkbox"/><br/>
+	<input type="checkbox"/><br/>
+	<input type="checkbox"/><br/>
+	<input type="checkbox"/><br/>
+</body>
+</html>
+<script type="text/javascript">
+	var inp1=document.getElementById('input1');
+	var allInput=document.getElementsByTagName('input');
+	var i=0;
+//下列代码为实现点击全选
+	inp1.onclick=function (){
+		for (i=0;i<allInput.length;i++){
+			allInput[i].checked=true;
+		}
+	}
+
+
+//下列代码为实现点击选中，再点击取消，用全选框的值进行判断
+	inp1.onclick=function (){
+		if (inp1.checked==true){
+			for (i=0;i<allInput.length;i++){
+				allInput[i].checked=true;
+			}
+		}else{
+			for (i=0;i<allInput.length;i++){
+				allInput[i].checked=false;
+			}
+		}
+	}
+
+//下列代码为实现点击选中，再点击取消，用点击次数的奇偶进行判断
+	var count=0;
+	inp1.onclick=function (){
+		if (count%2){
+			for (i=0;i<allInput.length;i++){
+				allInput[i].checked=false;
+			}
+		}else{
+			for (i=0;i<allInput.length;i++){
+				allInput[i].checked=true;
+			}
+		}
+		count++;
+	}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+

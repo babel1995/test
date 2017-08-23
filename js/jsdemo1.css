@@ -67,7 +67,7 @@ a {
 	background-color: rgba(123,123,123,0.3);
 	display: none;
 	overflow: hidden;
-	/*pointer-events: none;/*防止鼠标事件受到影响产生层的闪烁*/
+
 }
 .up img{float: left; 	width: 160px;
 	height: 210px;

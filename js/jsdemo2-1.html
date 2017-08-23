@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js点击出现，再点击隐藏效果练习</title>
+	<link rel="stylesheet" type="text/css" href="jsdemo2-1.css">
+</head>
+<body>
+	<div class="d1" onclick="a1()">请点击</div>
+	<div id="div2" class="d2">div2</div>
+</body>
+</html>
+<script type="text/javascript">
+
+	var divtwo=document.getElementById('div2');
+
+	function a1(){
+
+			if (divtwo.style.display=='block') {
+				divtwo.style.display='none';
+			}else{
+				divtwo.style.display='block';
+			}
+	}
+	//判断里面用双等号==
+</script>
