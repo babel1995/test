@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>for循环加事件</title>
+</head>
+<body>
+	<input type="button" value="1"></input>
+	<input type="button" value="2"></input>
+	<input type="button" value="3"></input>
+	<input type="button" value="4"></input>
+</body>
+</html>
+<script type="text/javascript">
+	var allBtn=document.getElementsByTagName('input');
+	var i=0;
+	for (i=0;i < allBtn.length; i++){
+		allBtn[i].onclick=function(){
+			// alert('a');//弹出a
+			alert(this.value);//弹出当前按钮的value，this表示allBtn[i]
+		}
+	}
+</script>

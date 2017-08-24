@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡</title>
+	<style type="text/css">
+		input{
+			background: white;
+		}
+		.active{
+			background: yellow;
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			background: #ccc;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<input class=active type="button" value="1"></input>
+	<input type="button" value="2"></input>
+	<input type="button" value="3"></input>
+	<div style="display: block;">111</div>
+	<div>222</div>
+	<div>333</div>
+</body>
+</html>
+<script type="text/javascript">
+	var allBtn=document.getElementsByTagName('input');
+	var allDiv=document.getElementsByTagName('div');
+	var i=0;
+
+	for(i=0;i<allBtn.length;i++){
+		allBtn[i].index=i; //索引标记按钮序号
+		allBtn[i].onclick=function(){
+
+			for(i=0;i<allBtn.length;i++){
+				allBtn[i].className='';
+				allDiv[i].style.display='none';
+			// for循环清除选中状态
+			}
+
+			this.className='active'; //this表示当前allBtn[i]
+			allDiv[this.index].style.display='block';//当前序号的Div的样式
+		}
+	}
+</script>
