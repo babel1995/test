@@ -16,9 +16,14 @@
 			margin: 0;
 			line-height: 30px;
 			border: 1px solid black;
+			position: relative;
 		}
-		div{
+		li div{
 			display: none;
+			position: absolute;
+			width: 120px;
+			left: 98px;
+			top: 0;
 		}
 		.active{
 			background-color: yellow;
@@ -33,11 +38,11 @@
 <body>
 	<input type="button" value="所有分类" onclick="clik()"></input>
 	<ul id="list" >
-		<li>种类1</li><div>种类1的二级菜单</div>
-		<li>种类2</li><div>种类2的二级菜单</div>
-		<li>种类3</li><div>种类3的二级菜单</div>
-		<li>种类4</li><div>种类4的二级菜单</div>
-		<li>种类5</li><div>种类5的二级菜单</div>
+		<li>种类1<div>种类1的二级菜单</div></li>
+		<li>种类2<div>种类2的二级菜单</div></li>
+		<li>种类3<div>种类3的二级菜单</div></li>
+		<li>种类4<div>种类4的二级菜单</div></li>
+		<li>种类5<div>种类5的二级菜单</div></li>
 	</ul>
 </body>
 </html>
@@ -79,18 +84,25 @@
 
 			}
 
-			// 为一级菜单事件中的二级菜单添加鼠标离开事件
-			aDiv[i].index=i;
-			aDiv[i].onmouseleave=function(){
-				// for(i=0;i<aDiv.length;i++){
-					// aLi[i].className='';
-					// aDiv[i].className='';
-				// 方法1：用for循环直接清除全部选中样式
-				// }
-				this.className='';
-				aLi[this.index].className='';
-				// 方法2：只清除当前元素的选中样式，在for循环和此方法中选择一种即可。
+
+			aLi[i].onmouseout=function(){
+				this.className = '';
+				aDiv[this.index].className = '';
+
 			}
+
+			// 为一级菜单事件中的二级菜单添加鼠标离开事件
+			// aDiv[i].index=i;
+			// aDiv[i].onmouseleave=function(){
+			// 	// for(i=0;i<aDiv.length;i++){
+			// 		// aLi[i].className='';
+			// 		// aDiv[i].className='';
+			// 	// 方法1：用for循环直接清除全部选中样式
+			// 	// }
+			// 	this.className='';
+			// 	aLi[this.index].className='';
+			// 	// 方法2：只清除当前元素的选中样式，在for循环和此方法中选择一种即可。
+			// }
 		}
 	}
 </script>
