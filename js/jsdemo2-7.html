@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>js星级评分</title>
+    <style type="text/css">
+    i {
+        background: url(../image/check.png) right center;
+        display: inline-block;
+        height: 38px;
+        width: 38px;
+    }
+
+    .checked {
+        background-position: left center;
+    }
+    </style>
+</head>
+
+<body>
+    <span>请打分</span>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+</body>
+
+</html>
+<script type="text/javascript">
+var score = document.getElementsByTagName('i');
+var a = 0;
+
+for (a = 0; a < score.length; a++) {
+	score[a].index=a;
+    score[a].onmouseenter = function() {
+    	for(a = 0; a < this.index+1; a++){
+    	score[a].className='checked';
+    	}
+    }
+    score[a].onclick = function() {
+        alert("您的评分为" + (this.index+ 1) + "分");
+    }
+    score[a].onmouseout = function() {
+    	for(a = 0; a < this.index+1; a++){
+    	score[a].className='';
+    	}
+    }
+}
+</script>
+
+
+
+

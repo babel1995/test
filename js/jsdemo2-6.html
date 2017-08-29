@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js自定义单选框</title>
+	<style>
+	#list{
+		margin: 0 auto;
+		border: 1px solid #ccc;
+		padding: 20px;
+		width: 500px;
+		height: 100px;
+	}
+	#list li {
+		float: left;
+		line-height: 38px;
+		color: #999;
+		list-style: none;
+		margin: 0 20px;
+	}
+	li i{
+		background: url(../image/check.png) right center;
+		display: inline-block;
+		height: 38px;
+		width: 38px;
+	}
+	.checked {
+		background-position: left center;
+	}
+	</style>
+</head>
+<body>
+	<ul id="list">
+		<li><i class="checked"></i>苹果</li>
+		<li><i></i>梨子</li>
+		<li><i></i>香蕉</li>
+		<li><i></i>草莓</li>
+		<li><i></i>葡萄</li>
+		<li><i></i>橘子</li>
+	</ul>
+</body>
+</html>
+<script type="text/javascript">
+	var i=document.getElementsByTagName('i');  //获取所有的I元素
+
+	for(var a=0; a<i.length;a++){
+		i[a].onclick=function(){  //给所有i元素添加点击事件
+			for(a=0; a<i.length;a++){
+				i[a].className='';  
+			}
+			this.className='checked';
+		}
+
+	}
+</script>
+
+
+
+
+

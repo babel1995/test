@@ -1,108 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>二级导航菜单</title>
-	<style type="text/css">
-		ul{
-			margin: 0;
-			padding: 0;
-			width: 100px;
-			display: none;
-		}
-		li{
-			list-style-type: none;
-			padding: 0;
-			margin: 0;
-			line-height: 30px;
-			border: 1px solid black;
-			position: relative;
-		}
-		li div{
-			display: none;
-			position: absolute;
-			width: 120px;
-			left: 98px;
-			top: 0;
-		}
-		.active{
-			background-color: yellow;
-		}
-		.menu{
-			border: 1px solid black;
-			width: 150px;
-			display: block;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <title>二级导航菜单</title>
+    <style type="text/css">
+    ul {
+        margin: 0;
+        padding: 0;
+        width: 100px;
+        display: none;
+    }
+
+    li {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        line-height: 30px;
+        border: 1px solid black;
+        position: relative;
+    }
+
+    li ul {
+        display: none;
+        position: absolute;
+        width: 120px;
+        left: 98px;
+        top: 0;
+    }
+
+    .active {
+        background-color: yellow;
+    }
+
+    .menu {
+        border: 1px solid black;
+        width: 150px;
+        display: block;
+    }
+    </style>
 </head>
+
 <body>
-	<input type="button" value="所有分类" onclick="clik()"></input>
-	<ul id="list" >
-		<li>种类1<div>种类1的二级菜单</div></li>
-		<li>种类2<div>种类2的二级菜单</div></li>
-		<li>种类3<div>种类3的二级菜单</div></li>
-		<li>种类4<div>种类4的二级菜单</div></li>
-		<li>种类5<div>种类5的二级菜单</div></li>
-	</ul>
+    <input type="button" value="所有分类" onclick="clicks()"></input>
+    <ul id="list">
+        <li class="nav">种类1
+            <ul>
+                <li>种类1的二级菜单</li>
+                <li>种类1的二级菜单</li>
+                <li>种类1的二级菜单</li>
+            </ul>
+        </li>
+        <li class="nav">种类2
+            <ul>
+                <li>种类2的二级菜单</li>
+                <li>种类2的二级菜单</li>
+                <li>种类2的二级菜单</li>
+            </ul>
+        </li>
+        <li class="nav">种类3
+            <ul>
+                <li>种类3的二级菜单</li>
+                <li>种类3的二级菜单</li>
+                <li>种类3的二级菜单</li>
+            </ul>
+        </li>
+        <li class="nav">种类4
+            <ul>
+                <li>种类4的二级菜单</li>
+                <li>种类4的二级菜单</li>
+                <li>种类4的二级菜单</li>
+            </ul>
+        </li>
+        <li class="nav">种类5
+            <ul>
+                <li>种类5的二级菜单</li>
+                <li>种类5的二级菜单</li>
+                <li>种类5的二级菜单</li>
+            </ul>
+        </li>
+    </ul>
 </body>
+
 </html>
 <script type="text/javascript">
-	var uli=document.getElementById('list');
-	var aLi=document.getElementsByTagName('li');
-	var aDiv=document.getElementsByTagName('div');
-	var i=0;
+var uli = document.getElementById('list');
+var aLi = uli.getElementsByClassName('nav');
+
+var i = 0;
 //为按钮点击事件设置函数
-	function clik(){
+function clicks() {
 
-		for(i=0;i<aLi.length;i++){
-			aLi[i].className='';
-			aDiv[i].className='';
-		// 点击按钮前用for循环清除选中状态，使每次打开下拉菜单都不会有上次选中的样式出现。
-		}
+    // for (i = 0; i < aLi.length; i++) {
+    //     aLi[i].className = 'nav';
+    //     console.log(aLi[i].getElementsByTagName('ul')[0]);
+    //     aLi[i].getElementsByTagName('ul')[0].className = '';
+    //     // 点击按钮前用for循环清除选中状态，使每次打开下拉菜单都不会有上次选中的样式出现。
+    // }
 
-		// 使用if进行按钮状态的判断，制造显示、隐藏交替出现效果
-		if (uli.style.display=='block') {
-			uli.style.display='none';
-		}else{
-			uli.style.display='block';
-		}
+    // 使用if进行按钮状态的判断，制造显示、隐藏交替出现效果
+    if (uli.style.display == 'block') {
+        uli.style.display = 'none';
+    } else {
+        uli.style.display = 'block';
+    }
 
-		// 用循环为一级菜单加上所有事件
-		for(i=0;i<aLi.length;i++){
-			//为一级菜单添加鼠标移入事件
-			aLi[i].index=i;
-			aLi[i].onmouseover=function(){
+    // 用循环为一级菜单加上所有事件
+    for (i = 0; i < aLi.length; i++) {
+        //为一级菜单添加鼠标移入事件
+        aLi[i].index = i;
+        aLi[i].onmouseover = function() {
 
-				for(i=0;i<aLi.length;i++){
-					aLi[i].className='';
-					aDiv[i].className='';
-				// for循环清除选中状态
-				}
+            for (i = 0; i < aLi.length; i++) {
+                aLi[i].className = 'nav';
+        		aLi[i].getElementsByTagName('ul')[0].className = '';
+                
+                // for循环清除选中状态
+            }
 
-				this.className='active';//鼠标移入元素改变元素样式
-				aDiv[this.index].className='menu';//出现二级菜单
-
-			}
+            this.className = 'nav active'; //鼠标移入元素改变元素样式出现二级菜单
+        	aLi[this.index].getElementsByTagName('ul')[0].className = 'menu';
 
 
-			aLi[i].onmouseout=function(){
-				this.className = '';
-				aDiv[this.index].className = '';
+        }
 
-			}
 
-			// 为一级菜单事件中的二级菜单添加鼠标离开事件
-			// aDiv[i].index=i;
-			// aDiv[i].onmouseleave=function(){
-			// 	// for(i=0;i<aDiv.length;i++){
-			// 		// aLi[i].className='';
-			// 		// aDiv[i].className='';
-			// 	// 方法1：用for循环直接清除全部选中样式
-			// 	// }
-			// 	this.className='';
-			// 	aLi[this.index].className='';
-			// 	// 方法2：只清除当前元素的选中样式，在for循环和此方法中选择一种即可。
-			// }
-		}
-	}
+        aLi[i].onmouseout = function() {
+            this.className = 'nav';
+            aLi[this.index].getElementsByTagName('ul')[0].className = '';
+
+        }
+
+    }
+}
 </script>
