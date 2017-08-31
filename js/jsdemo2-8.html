@@ -20,26 +20,29 @@
     .list2{
     	display: none;
     }
+    .color{
+    	background-color: yellow;
+    }
     </style>
 </head>
 <body>
 	<ul id="list">
 		<li class="li">
-			类别1
+			<span>类别1</span>
 			<ul class="list2">
 				<li>目录1</li>
 				<li>目录2</li>
 			</ul>
 		</li>
 		<li class="li">
-			类别2
+			<span>类别2</span>
 			<ul class="list2">
 				<li>目录1</li>
 				<li>目录2</li>
 			</ul>
 		</li>
 		<li class="li">
-			类别3
+			<span>类别3</span>
 			<ul class="list2">
 				<li>目录1</li>
 				<li>目录2</li>
@@ -52,14 +55,18 @@
 	var uL=document.getElementById('list');
 	var lI=uL.getElementsByClassName('li');
 	var lI2=uL.getElementsByClassName('list2');
+	var sp=uL.getElementsByTagName('span');
 	var i=0;
 	for(i=0;i<lI.length;i++){
 		lI[i].index=i;
 		lI[i].onclick=function(){
 			if(lI2[this.index].style.display=="block"){
 			lI2[this.index].style.display="none";
+			sp[this.index].className='';
+
 		}else{
 			lI2[this.index].style.display="block";
+			sp[this.index].className='color';
 		}
 
 		}
