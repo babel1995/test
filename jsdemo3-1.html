@@ -27,9 +27,14 @@
 
 		}
 		div{
-			width: 340px;
-			height: 150px;
+			width: 320px;
+			height: 130px;
+			padding: 10px;
+			text-align: center;
 			background-color: #ddd;
+		}
+		.active{
+			background-color: #fff;
 		}
 	</style>
 </head>
@@ -49,7 +54,7 @@
 		<li><h2>12</h2><p>12月</p></li>
 	</ul>
 	<div>
-		1月过年
+		
 	</div>
 </body>
 </html>
@@ -63,6 +68,12 @@
 
 		oli[i].index=i;//索引写在for循环里
 		oli[i].onmouseover=function(){
+			for(i=0;i<oli.length;i++){
+				oli[i].className='';
+			}
+
+
+			this.className='active';
 			odiv.innerHTML=otext[this.index];
 
 		}
