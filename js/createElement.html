@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jsDom操作插入元素</title>
+</head>
+<script type="text/javascript">
+	window.onload=function(){
+		// 获取相关元素
+		var oTxt=document.getElementById('txt1');
+		var oBtn=document.getElementById('btn1');
+		var oUl=document.getElementById('ul1');
+		// 添加点击事件
+		oBtn.onclick=function(){
+			// 创建新元素li
+			var oLi=document.createElement('li');
+			// 获取li，长度用于判断
+			var aLi=oUl.getElementsByTagName('li');
+			// 新元素的内容为输入框的值
+			oLi.innerHTML=oTxt.value;
+
+			if(aLi.length==0){
+				// li长度为0时在ul里添加新的li
+				oUl.appendChild(oLi);
+			}else{
+				// li有个数时在第一个li前添加新li
+				oUl.insertBefore(oLi,aLi[0]);
+			}
+		}
+
+	}
+</script>
+<body>
+	<input id="txt1" type="text"></input>
+	<input id="btn1" type="button" value="创建li"></input>
+	<ul id="ul1">
+	</ul>
+</body>
+</html>
