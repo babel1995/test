@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>开启和关闭定时器</title>
+	<script type="text/javascript">
+		// 定时器所调用的函数
+		function show(){
+			alert("a");
+		}
+		window.onload=function(){
+			var oBtn1=document.getElementById('btn1');
+			var oBtn2=document.getElementById('btn2');
+			var timer=null;
+			oBtn1.onclick=function(){
+				// 开启定时器，将定时器返回的结果存在变量里，方便关闭的时候不影响其他定时器
+				timer=setInterval(show,1000);
+			}
+			oBtn2.onclick=function(){
+				// 关闭定时器
+				clearInterval(timer);
+			}
+		}
+	</script>
+</head>
+<body>
+	<input id="btn1" type="button" value="开启定时器"></input>
+	<input id="btn2" type="button" value="关闭定时器"></input>
+</body>
+</html>
