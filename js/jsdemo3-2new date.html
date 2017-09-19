@@ -11,6 +11,7 @@
 		}
 	</style>
 	<script type="text/javascript">
+		// 判断，使时间为个位数时也能够显示两位，避免字符串长度不足：空位补0
 		function toDouble(num){
 			if(num<10){
 				return '0'+num;
@@ -22,14 +23,18 @@
 			var aSpan=document.getElementsByTagName('span');
 			var i=0;
 			function updateTime(){
+				// 通过时间对象获取系统时间
 				var oDate=new Date();
+				// 连接获取到的时间成为字符串，供charAt提取，调用判断函数处理获取到的时间
 				var str=toDouble(oDate.getFullYear())+toDouble((oDate.getMonth()+1))+toDouble(oDate.getDate())+toDouble(oDate.getHours())+toDouble(oDate.getMinutes())+toDouble(oDate.getSeconds());
-
+				// 使用循环将每一变动项的内容与时间字符对应，用charAt提取时间字符串的对应位置
 				for(i=0;i<aSpan.length;i++){
 					aSpan[i].innerHTML=str.charAt(i);
 				}
 			}
+			// 开启定时器
 			setInterval(updateTime,1000);
+			// 解决定时器刷新时重新运行的时间差
 			updateTime();  
 
 
