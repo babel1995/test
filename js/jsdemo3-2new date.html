@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数字时钟</title>
+	<style type="text/css">
+		body{
+			color: #333;
+			margin-left: 40px;
+			margin-top: 20px;
+		}
+	</style>
+	<script type="text/javascript">
+		function toDouble(num){
+			if(num<10){
+				return '0'+num;
+			}else{
+				return ''+num;
+			}
+		}
+		window.onload=function(){
+			var aSpan=document.getElementsByTagName('span');
+			var i=0;
+			function updateTime(){
+				var oDate=new Date();
+				var str=toDouble(oDate.getFullYear())+toDouble((oDate.getMonth()+1))+toDouble(oDate.getDate())+toDouble(oDate.getHours())+toDouble(oDate.getMinutes())+toDouble(oDate.getSeconds());
+
+				for(i=0;i<aSpan.length;i++){
+					aSpan[i].innerHTML=str.charAt(i);
+				}
+			}
+			setInterval(updateTime,1000);
+			updateTime();  
+
+
+		}
+	</script>
+</head>
+<body>
+	<span>０</span><span>０</span><span>０</span><span>０</span>年<span>０</span><span>０</span>月<span>０</span><span>０</span>日&nbsp;&nbsp;&nbsp;&nbsp;<span>０</span><span>０</span>时<span>０</span><span>０</span>分<span>０</span><span>０</span>秒
+</body>
+</html>
