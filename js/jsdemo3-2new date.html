@@ -19,14 +19,34 @@
 				return ''+num;
 			}
 		}
+		// 转换时间对象所获取的星期数
+		function toChinese(day){
+			switch(day){
+				case 0:
+					return '日';
+				case 1:
+					return '一';
+				case 2:
+					return '二';
+				case 3:
+					return '三';
+				case 4:
+					return '四';
+				case 5:
+					return '五';
+				case 6:
+					return '六';
+			}
+		}
 		window.onload=function(){
 			var aSpan=document.getElementsByTagName('span');
+			var oI=document.getElementsByTagName('i');
 			var i=0;
 			function updateTime(){
 				// 通过时间对象获取系统时间
 				var oDate=new Date();
 				// 连接获取到的时间成为字符串，供charAt提取，调用判断函数处理获取到的时间
-				var str=toDouble(oDate.getFullYear())+toDouble((oDate.getMonth()+1))+toDouble(oDate.getDate())+toDouble(oDate.getHours())+toDouble(oDate.getMinutes())+toDouble(oDate.getSeconds());
+				var str=toDouble(oDate.getFullYear())+toDouble((oDate.getMonth()+1))+toDouble(oDate.getDate())+toChinese(oDate.getDay())+toDouble(oDate.getHours())+toDouble(oDate.getMinutes())+toDouble(oDate.getSeconds());
 				// 使用循环将每一变动项的内容与时间字符对应，用charAt提取时间字符串的对应位置
 				for(i=0;i<aSpan.length;i++){
 					aSpan[i].innerHTML=str.charAt(i);
@@ -42,6 +62,6 @@
 	</script>
 </head>
 <body>
-	<span>０</span><span>０</span><span>０</span><span>０</span>年<span>０</span><span>０</span>月<span>０</span><span>０</span>日&nbsp;&nbsp;&nbsp;&nbsp;<span>０</span><span>０</span>时<span>０</span><span>０</span>分<span>０</span><span>０</span>秒
+	<span>０</span><span>０</span><span>０</span><span>０</span>年<span>０</span><span>０</span>月<span>０</span><span>０</span>日&nbsp;&nbsp;星期<span></span>&nbsp;&nbsp;<span>０</span><span>０</span>时<span>０</span><span>０</span>分<span>０</span><span>０</span>秒
 </body>
 </html>
