@@ -1,0 +1,33 @@
+body {
+	margin: 0;
+	width: 1024px;
+	margin: 0 auto;
+}
+#left {
+	background: #ccc;
+	height: 800px;
+	width: 80%;
+	float: left;
+}
+#right {
+	background: #666;
+	width: 20%;
+	height: 800px;
+	/*float: left;*/
+	float: right;
+	/*overflow: hidden;*/
+}
+/*float CSS属性指定一个元素应沿其容器的左侧或右侧放置，
+允许文本和内联元素环绕它。
+该元素从网页的正常流动中移除，
+尽管仍然保持部分的流动性（与绝对定位相反）。
+都脱离文档流才会接着前一个的位置漂浮。例如：给#right也加左浮动
+
+只设置div-left左浮动，div-right会从坐标（0,0）放置，使div-right被左部重合。
+
+1.给#right设置左浮动，#right左侧靠着#left的右侧排列。
+2.给#right设置右浮动，#right右侧靠着body右侧排列。
+3.为div-right设置宽度为左div的左margin，#right左侧靠着#left的右侧排列。
+4.设置overflow：hidden触发BFC，#right左侧靠着#left的右侧排列。
+
+*/

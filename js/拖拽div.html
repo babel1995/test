@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖拽div</title>
+	<style type="text/css">
+	#div1 {
+		width: 100px;
+		height: 100px;
+		background: red;
+		position: absolute;
+	}
+
+	</style>
+	<script type="text/javascript">
+		window.onload=function (){
+			var oDiv=document.getElementById('div1');
+			// 鼠标到div1的左边距离
+			var disX=0;
+			// 鼠标到div1的上边距离
+			var disY=0;
+
+			// 1.鼠标按下计算鼠标与div的距离并存储
+			oDiv.onmousedown=function (ev){
+				// 使用事件对象
+				var oEvent=ev||event;
+				// clientX、Y鼠标位置，offsetLeft实际左边距
+				disX=oEvent.clientX-oDiv.offsetLeft;
+				disY=oEvent.clientY-oDiv.offsetTop;
+				// 2.计算鼠标移动时div的距离(在document上加事件)
+				document.onmousemove=function (ev){
+					var oEvent=ev||event;
+					// oDiv的绝对定位的左距离=鼠标位置-鼠标与div的左边距
+					var l=oEvent.clientX-disX;
+					var t=oEvent.clientY-disY;
+
+					// if控制div不拖拽出可视区，clientWidth可视区宽度，offsetWidth实际宽度
+					// 左右
+					if (l<0) {
+						l=0;
+					}else if (l>document.documentElement.clientWidth-oDiv.offsetWidth){
+						l=document.documentElement.clientWidth-oDiv.offsetWidth;
+					}
+					// 上下
+					if (t<0) {
+						t=0;
+					}else if (t>document.documentElement.clientHeight-oDiv.offsetHeight){
+						t=document.documentElement.clientHeight-oDiv.offsetHeight;
+					}
+
+					oDiv.style.left=l+'px';
+					oDiv.style.top=t+'px';
+				}
+				// 3.鼠标抬起使鼠标移动事件为空
+				document.onmouseup=function (){
+					document.onmousemove=null;
+					document.onmouseup=null;
+				}
+				// 阻止火狐的空div拖拽bug
+				return false;
+			}
+
+		}
+		// 未解决问题，缩小窗口使div超出窗口范围
+
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+</body>
+</html>

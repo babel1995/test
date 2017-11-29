@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>div运动--匀速运动</title>
+	<style type="text/css">
+		h3{
+			margin-top: 150px;
+		}
+		#div1 {
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			left: 0px;
+			top: 30px;
+		}
+	</style>
+	<script type="text/javascript">
+		var timer=null;
+		function startMove (){
+
+			var oDiv=document.getElementById('div1');
+			// 清除原来的定时器，避免定时器重复执行（速度叠加）
+			clearInterval(timer);
+			timer=setInterval(function (){
+				var iSpeed=10;
+				if (oDiv.offsetLeft>=300) {
+					clearInterval(timer);
+				}else{
+					// 用else包起来，避免点击再次执行一次（向前走一格）
+					oDiv.style.left=oDiv.offsetLeft+iSpeed+'px';
+				}
+			},
+			30);
+
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="开始运动" onclick="startMove()" />
+	<div id="div1"></div>
+	<h3>运动框架</h3>
+	<p>1:在开始运动前先关闭原有的定时器<br/>
+		2:把运动和停止隔开（用if/else）
+	</p>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax分页案例</title>
+<!--引入封装好的ajax函数文件-->
+	<script src="ajax.js"></script>
+	<script type="text/javascript">
+		ajax('http://api.youdui.org/api/v1/mallHome/specialActivity?appLinkId=922',function(data){
+			console.log(data);
+			data=JSON.parse(data);
+			console.log(data.module[0].id);
+		});
+	window.onload=function () {
+		//获取相关元素
+		var oUl=document.getElementById('ul1');
+		var aBtn=document.getElementsByTagName('a');
+		var i=0;
+		//为a标签添加循环
+		for(i=0;i<aBtn.length;i++) {
+			//索引            011111111111111gftvr
+			aBtn[i].index=i;
+			//清空内容
+			//为a标签添加点击事件
+			aBtn[i].onclick=function () {
+				//调用ajax函数
+				ajax('page'+(this.index)+'.txt',
+					//读取数据并应用
+					function (str) {
+						//使用eval将字符串分段成数组
+						var aDate=eval (str);
+						//为数组添加循环
+						for (i=0;i<aDate.length;i++){
+							//创建li元素
+							var oLi=document.createElement('li');
+							//为li添加内容
+							oLi.innerHTML='<strong>'+aDate[i].user+'</strong><i>'+aDate[i].pass+'</i>';
+							//将li放置在ul下
+							oUl.appendChild(oLi);
+						}
+					}
+				)
+			}
+		}
+
+		// 获取猫咪数据
+		ajax('http://liege.cc:3000/mock/ajax/getdatou',function(data){
+			alert(typeof JSON.parse(data));
+			var catname = $('catname');
+			catname.innerHTML = data;
+
+		})
+
+
+		function $ (id) {
+			return document.getElementById(id);
+		}
+	}
+	</script>
+</head>
+<body>
+<!--ul用来放读取到的每页的内容-->
+	<ul id="ul1"></ul>
+<!--a用来点击-->
+	<a href="javascript:;">1</a>
+	<a href="javascript:;">2</a>
+	<a href="javascript:;">3</a>
+
+	<div id="box">
+	我有一只猫，名字叫做<span id="catname"></span>
+	它今年<span id="age"></span>岁了
+	</div>
+</body>
+</html>
+<!--服务器文件：
+	page1.txt 
+	page2.txt
+	page3.txt
+	文件内容：
+	[{user:'aaa',pass:'123'},{user:'bbb',pass:'112334'},{user:'ccc',pass:'1113'}]

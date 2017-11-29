@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>背景图片自适应</title>
+	<style type="text/css">
+	/*1.等比例：*/
+	.column{
+		/*设置父元素的最大宽度*/
+       max-width: 1024px;
+ 	}
+	.figure {
+         padding-top:30.85%; 
+         /* 316 / 1024  padding-top = （图片高度 / 图片宽度 ）＊ 100% ＝ （316 ／ 1024）＊ 100% ＝  30.85%; */
+         background: url("http://images2015.cnblogs.com/blog/561794/201603/561794-20160310002800647-50077395.jpg");
+          background-repeat:no-repeat;
+
+          background-size:cover;
+          background-position:center;
+    }
+    /*2.不等比例缩放*/
+
+    #div1{
+    	/*宽度100%使页面缩小后两边也有背景拉通整个浏览器窗口*/
+    	width: 100%;
+    	height: 300px;
+
+    background: url("https://shared-https.ydstatic.com/website/images/ynote/index_bg.png");
+          background-repeat:no-repeat;
+
+          background-size:cover;
+          background-position:center;
+    }
+	</style>
+</head>
+<body>
+	<div class="column">
+       <div class="figure"></div>
+ 	</div>
+ 	<div id="div1"></div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡--面向对象</title>
+	<style type="text/css">
+		input{
+			background: white;
+		}
+		.active{
+			background: yellow;
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			background: #ccc;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<input class=active type="button" value="1"></input>
+	<input type="button" value="2"></input>
+	<input type="button" value="3"></input>
+	<div style="display: block;">111</div>
+	<div>222</div>
+	<div>333</div>
+</body>
+</html>
+<script type="text/javascript">
+//修改流程：
+//提取函数。
+//设置全局变量。
+//创建构造函数：将全局变量作为构造函数的属性：使用：构造函数名.prototype.方法名=function (参数) {语句}，构造函数名首字母大写。
+//将提取的函数变为构造函数的原型对象的方法：this.属性名(变量)=属性值(变量值)。
+//在涉及属性的前面添加this关键词，使属性指向实例对象。
+//检查各处对象的指向，用var _this=this;可以让事件函数里的this指向实例对象，而不指向发生事件的载体，_this可自定义变量名，定时器里的this同理。
+//方法里需要指向调用该方法的事件的载体的时候，在调用时使用(this)进行传参，作为方法里对应载体的this。
+//使用_this连接方法时，若应作为函数被调用，则需要加上:function () {_this.所调用的方法(参数)}。
+//用构造函数new一个实例对象：var obj1=new Object()。
+
+	var tab1=new TabSwitch();//用构造函数生成新实例——使代码执行
+	function TabSwitch () {
+		this.allBtn=document.getElementsByTagName('input');
+		this.allDiv=document.getElementsByTagName('div');
+		this.i=0;//将全局变量变为构造函数的属性，加上this
+		var _this=this;//将this（实例对象）用_this变量存储，供点击事件调用
+
+		//所有方法和属性中涉及属性的都要加上this
+		for(i=0;i<this.allBtn.length;i++){
+			this.allBtn[i].index=i; 
+			this.allBtn[i].onclick=function (){//使用函数将_this.tab(this)变为函数以调用，不使用函数则报错
+				//使用_this变量将tab()的对象指向实例对象，使用this.tab则将tab()的对象指向allBtn[i]
+				_this.tab(this);//(this)里的this代表allBtn[i]，
+			}
+		}
+	}
+	//给原型对象添加tab方法，使用构造函数.prototype
+	TabSwitch.prototype.tab=function (oBtn){
+			for(i=0;i<this.allBtn.length;i++){
+				this.allBtn[i].className='';
+				this.allDiv[i].style.display='none';			
+			}
+			oBtn.className='active'; //this.className='active'中的this代表当前被点击的allBtn[i]，将this替换为oBtn参数，使用_this.tab(this);进行传参，使oBtn.className=this.className=allBtn[i].className
+			this.allDiv[oBtn.index].style.display='block';//[oBtn.index]同_this.tab(this)=allBtn[i].index
+		}
+		
+ //面向对象改之前的流程性代码
+ //	 var allBtn=document.getElementsByTagName('input');
+ // 	var allDiv=document.getElementsByTagName('div');
+ // 	var i=0;
+ 
+ // 	for(i=0;i<allBtn.length;i++){
+ // 		allBtn[i].index=i; //索引标记按钮序号
+ // 		allBtn[i].onclick=function(){
+ 
+ // 			for(i=0;i<allBtn.length;i++){
+ // 				allBtn[i].className='';
+ // 				allDiv[i].style.display='none';
+ // 			// for循环清除选中状态
+ // 			}
+
+ // 			this.className='active'; //this表示当前allBtn[i]
+ // 			allDiv[this.index].style.display='block';//当前序号的Div的样式
+ // 		}
+ // 	}
+</script>
