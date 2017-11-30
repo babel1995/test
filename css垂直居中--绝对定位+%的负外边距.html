@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css垂直居中--绝对定位+%的负外边距</title>
+	<style type="text/css">
+		/*3. 使用绝对定位和负%外边距对块级元素进行垂直居中。
+		margin的取值也可以是百分比，这时这个值规定了该元素基于父元素尺寸的百分比，
+		可以根据实际的使用场景来决定是用具体的数值还是用百分比。
+ */
+		#box {
+		    width: 300px;
+		    height: 300px;
+		    background: #ddd;
+		    position: relative;
+		}
+		#child {
+		    width: 50%;
+		    height: 30%;
+		    background: pink;
+		    position: absolute;
+		    top: 50%;
+		    margin: -15% 0 0 0; /*父元素的15%，自身为父元素的30%，所以边距为自身的一半*/
+		    line-height: 90px; /*文字在div内垂直居中，行高等于文本所在容器的高*/
+		    
+		}
+
+
+	</style>
+</head>
+<body>
+	<div id="box">
+    	<div id="child">我是测试DIV</div>
+	</div>
+</body>
+</html>

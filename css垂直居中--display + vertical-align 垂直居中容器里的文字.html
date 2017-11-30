@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css垂直居中--display + vertical-align 垂直居中容器里的文字</title>
+
+	<style type="text/css">
+		/*line-height: 300px; 多行文本使用该属性无法居中，该属性是一行文本的高度
+		vertical-align属性只对拥有valign特性的html元素起作用，例如表格元素中的<td><th>等等，而像<div><span>这样的元素是不行的。
+　　	valign属性规定单元格中内容的垂直排列方式，语法：<td valign="value">，value的可能取值有四种：
+		　　top：对内容进行上对齐
+		　　middle：对内容进行居中对齐
+		　　bottom：对内容进行下对齐
+		　　baseline：基线对齐
+			 
+	　　关于baseline值：基线是一条虚构的线。在一行文本中，大多数字母以基线为基准。
+		baseline 值设置行中的所有表格数据都分享相同的基线。
+		该值的效果常常与 bottom 值相同。
+		不过，如果文本的字号各不相同，那么 baseline 的效果会更好。 */
+		
+		#box {
+		    width: 300px;
+		    height: 300px;
+		    background: #ddd;
+		    display: table; 
+		}
+		#child {
+		    display: table-cell;
+		    vertical-align: middle;
+		}
+		
+	</style>
+</head>
+<body>
+	<div id="box">
+    	<div id="child">我也是一段测试文本我也是一段测试文本我也是一段测试文本我也是一段测试文本我也是一段测试文本</div>
+	</div>
+</body>
+</html>

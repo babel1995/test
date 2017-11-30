@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css垂直居中--设置第三方基准</title>
+	<style type="text/css">
+		/*首先设置一个高度等于父元素高度一半的第三方基准元素，
+		那么此时该基准元素的底边线自然就是父元素纵向上的中分线
+		再给要垂直居中的元素设置一个margin-top，值的大小是它自身高度的一半取负，则实现垂直居中
+ */
+		#box {
+		    width: 300px;
+		    height: 300px;
+		    background: #ddd;
+		}
+		#base {
+		    height: 50%;
+		    background: #AF9BD3;
+		}
+		#child {
+		    height: 100px;
+		    background: rgba(131, 224, 245, 0.6);
+		    line-height: 50px;
+		    margin-top: -50px;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="box">
+	    <div id="base"></div>
+	    <div id="child">今天写了第一篇博客，希望可以坚持写下去！</div>
+	</div>
+</body>
+</html>

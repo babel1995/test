@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css垂直居中--line-height + vertical-align对图片进行垂直居中</title>
+
+	<style type="text/css">
+		
+		#box {
+		    width: 500px;
+		    height: 500px;
+		    background: #ddd;
+		    line-height: 500px; 
+		   /* line-height:值等于容器的时候，可直接垂直居中内部元素包括文本和div，
+		    但是无法居中图片，得为图片加上vertical-align: middle;垂直居中属性，
+		    才能使图片在line-height中垂直居中。*/
+		}
+		
+		#box img {
+		    vertical-align: middle;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+    	<img src="rpg.jpg">
+    	<!--或者 <div><img src="rpg.jpg"></div> -->
+	</div>
+</body>
+</html>

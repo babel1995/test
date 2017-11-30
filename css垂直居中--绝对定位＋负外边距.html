@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css垂直居中--绝对定位和负外边距</title>
+	<style type="text/css">
+		/*1. 使用绝对定位和负外边距对块级元素进行垂直居中。
+		必须提前知道被居中块级元素的尺寸，否则无法准确实现垂直居中。
+ */
+		#box {
+		    width: 300px;
+		    height: 300px;
+		    background: #ddd;
+		    position: relative;
+		}
+		#child {
+		    width: 150px;
+		    height: 100px;
+		    background: orange;
+		    position: absolute;
+		    top: 50%;
+		    margin: -50px 0 0 0; /*上边距为负的自身高度的一半*/
+		    line-height: 100px; /*文字在div内垂直居中*/
+		}
+
+
+	</style>
+</head>
+<body>
+	<div id="box">
+    	<div id="child">我是测试DIV</div>
+	</div>
+</body>
+</html>

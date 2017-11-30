@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css垂直居中--使用padding</title>
+	<style type="text/css">
+		/*给父元素设置相等的上下内边距，则子元素自然是垂直居中的，
+		当然这时候父元素是不能设置高度的，要让它自动被填充起来，
+		除非设置了一个正好等于上内边距+子元素高度+下内边距的值，
+		否则无法精确的垂直居中。*/
+		#box {
+		    width: 300px;
+		    background: #ddd;
+		    padding: 100px 0;
+		}
+		#child {
+		    width: 200px;
+		    height: 100px;
+		    background: #F7A750;
+		    line-height: 100px;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="box">
+    	<div id="child">我是测试DIV</div>
+	</div>
+</body>
+</html>

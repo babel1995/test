@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>div垂直居中</title>
+	<style>
+		/*
+		1、水平居中
+		 .container{
+	 		width:200px;
+	 		height: 200px;
+	 		margin:auto 0;
+	 		background: red;
+		}
+		注意：margin: 0 auto;无法设置垂直居中
+*/
+		/*
+		2、让绝对定位的div居中
+ 		div {
+		 	position: absolute;
+		 	top: 0;
+		 	left: 0;
+		 	bottom: 0; 
+		 	right: 0; 
+			width: 300px;
+		 	height: 300px;
+		 	margin: auto;
+		 	background-color: pink;	
+ 		}
+ 		注意：上下左右都设置为0，margin: auto使上下左右边距自动，使div水平垂直居中
+		 	只设置上下为0，则margin: auto使上下边距自动，div垂直居中
+		 	div {
+			 	position: absolute;
+			 	top: 0;	
+			 	bottom: 0; 
+				width: 300px;
+			 	height: 300px;
+			 	margin: auto;
+			 	background-color: pink;	
+ 			}
+		 	只设置左右为0，则margin： auto使左右边距自动，div水平居中
+		 	div {
+			 	position: absolute;
+			 	left: 0;
+			 	right: 0; 
+				width: 300px;
+			 	height: 300px;
+			 	margin: auto;
+			 	background-color: pink;	
+ 			}
+*/
+		
+	/*	3、水平垂直居中一
+	 		确定容器的宽高 宽500 高 300 的层
+	 		设置层的外边距 ，外边距为负自身宽高的一半 */
+	 	.box {
+	 		width: 800px;
+	 		height: 800px;
+	 		background: #ccc;
+	 		overflow: hidden; /*使用相对定位要为父元素加该属性*/
+	 	}
+	 	.container {
+		 	position: relative;		
+		 	width:500px;
+		 	height:300px;
+		 	top: 50%;
+		 	left: 50%;
+		 	margin: -150px 0 0 -250px;     	
+		 	background-color: pink;	 	
+	  	}
+	  	/*使用absolute则要对父元素添加定位，overflow: hidden;清除子元素margin对父元素高度的影响。*/
+	  	
+
+	</style>
+</head>
+<body>
+	<div class="box">
+	<div class="container"></div>
+	</div>
+</body>
+</html>

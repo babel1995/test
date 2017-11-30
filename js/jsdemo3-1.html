@@ -27,9 +27,15 @@
 
 		}
 		div{
-			width: 340px;
-			height: 150px;
+			width: 320px;
+			height: 130px;
+			padding: 10px;
+			text-align: center;
 			background-color: #ddd;
+		}
+		.active{
+			background-color: #fff;
+			border: 1px solid #000;
 		}
 	</style>
 </head>
@@ -49,20 +55,26 @@
 		<li><h2>12</h2><p>12月</p></li>
 	</ul>
 	<div>
-		1月过年
+		
 	</div>
 </body>
 </html>
 <script type="text/javascript">
 	var oli=document.getElementsByTagName('li');
-	var odiv=document.getElementsByTagName('div')[0];
-	var otext=['1月有元旦','2月要过年，还有情人节','3月有妇女节，植树节','4月愚人节','5月劳动节','6月儿童节','7月建党节','8月建军节','9月教师节','10月国庆节','11月光棍节','12月圣诞节']
+	var odiv=document.getElementsByTagName('div')[0];//通过元素名获取的是一组元素，需要定义第几个后赋值给变量
+	var otext=['1月有元旦','2月要过年，还有情人节','3月有妇女节，植树节','4月愚人节','5月劳动节','6月儿童节','7月建党节','8月建军节','9月教师节','10月国庆节','11月光棍节','12月圣诞节']//数组
 	var i=0;
 
 	for(i=0;i<oli.length;i++){
 
-		oli[i].index=i;
+		oli[i].index=i;//索引写在for循环里
 		oli[i].onmouseover=function(){
+			for(i=0;i<oli.length;i++){
+				oli[i].className='';
+			}
+
+
+			this.className='active';
 			odiv.innerHTML=otext[this.index];
 
 		}

@@ -4,14 +4,45 @@
 	<meta charset="UTF-8">
 	<title>ajax分页案例</title>
 <!--引入封装好的ajax函数文件-->
-	<script src="ajax.js"></script>
+	<style>
+		li {
+			height: 100px;
+			overflow: hidden;
+			margin: 20px;
+		}
+		img {
+			width: 200px;
+			height: 100px;
+			float: left;
+		}
+	</style>
+
+</head>
+<body>
+<!--ul用来放读取到的每页的内容-->
+	<ul id="ul1"></ul>
+<!--a用来点击-->
+	<a href="javascript:;">1</a>
+	<a href="javascript:;">2</a>
+	<a href="javascript:;">3</a>
+
+	<div id="box">
+	我有一只猫，名字叫做<span id="catname"></span>
+	它今年<span id="age"></span>岁了
+	</div>
+
+
+	<div id="product">
+		<h1 id="titles"></h1>
+		<ul id="list">
+			
+		</ul>
+	</div>
+</body>
+<script src="ajax.js"></script>
 	<script type="text/javascript">
-		ajax('http://api.youdui.org/api/v1/mallHome/specialActivity?appLinkId=922',function(data){
-			console.log(data);
-			data=JSON.parse(data);
-			console.log(data.module[0].id);
-		});
-	window.onload=function () {
+
+
 		//获取相关元素
 		var oUl=document.getElementById('ul1');
 		var aBtn=document.getElementsByTagName('a');
@@ -44,33 +75,36 @@
 		}
 
 		// 获取猫咪数据
-		ajax('http://liege.cc:3000/mock/ajax/getdatou',function(data){
-			alert(typeof JSON.parse(data));
-			var catname = $('catname');
-			catname.innerHTML = data;
+		// ajax('http://liege.cc:3000/mock/ajax/getlist',function(data){
+		// 	alert(typeof JSON.parse(data));
+		// 	var catname = $('catname');
+		// 	// catname.innerHTML = data;
 
-		})
+		// })
+			var $ = function (id) {
+				return document.getElementById(id) || {};
+			}
+		// 请求商品列表
+		ajax('http://api.youdui.org/api/v1/mallHome/specialActivity?appLinkId=922',function(data){
+			console.log(data);
+			data=JSON.parse(data);
+			console.log(data.module[0].title);
+			var listData = data.module[0].productList;
+			console.log($('titles'))
+			var oUl = $('list');
+			for(var i=0;i<listData.length;i++){
+				oUl.innerHTML += '<li>' + listData[i].productName + '<img src=' + listData[i].img + '>' + '</li>'
+			}
+
+			$('titles').innerHTML = data.module[0].title;
+
+		});
 
 
-		function $ (id) {
-			return document.getElementById(id);
-		}
-	}
+
+
+
 	</script>
-</head>
-<body>
-<!--ul用来放读取到的每页的内容-->
-	<ul id="ul1"></ul>
-<!--a用来点击-->
-	<a href="javascript:;">1</a>
-	<a href="javascript:;">2</a>
-	<a href="javascript:;">3</a>
-
-	<div id="box">
-	我有一只猫，名字叫做<span id="catname"></span>
-	它今年<span id="age"></span>岁了
-	</div>
-</body>
 </html>
 <!--服务器文件：
 	page1.txt 
