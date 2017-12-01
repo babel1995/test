@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>实现jquery的 removeClass方法</title>
+	<style type="text/css">
+		.div3{
+			width: 100px;
+			height: 100px;
+			background: pink;
+		}
+	</style>
+</head>
+<body>
+	<div class="div1 div2 div3 div4 div5"></div>
+</body>
+</html>
+<script type="text/javascript">
+	// 变量存储在外部获取的要移除name的元素
+	var div=document.getElementsByTagName('div')[0];
+
+	// 实现jquery的 removeClass方法
+	function removeClass(dom,name){
+		var allClassName=dom.className.split(' ');//引号中间有空格，否则数组拆分错误=["div1", "div2", "div3", "div4", "div5"]
+		var newClass=allClassName.filter(function(a){return a != name})//"div1", "div2", "div3", "div4", "div5"!='div3'------"div1", "div2", "div4", "div5"------["div1", "div2", "div4", "div5"]
+		dom.className=newClass;//["div1", "div2", "div4", "div5"]-----class="div1 div2 div4 div5"
+		return newClass;//["div1", "div2", "div4", "div5"],供其他地方调用该数据
+	}//所有地方注意大小写和标点，否则报错
+
+	removeClass(div,'div3');//调用函数，注意元素的参数与外部获取元素时使用的变量名一致，name参数加引号
+
+</script>
